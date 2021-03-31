@@ -15,7 +15,7 @@ int main (int argc, const char *argv[]){
 
     int opt = 1;
 
-    if ((socket_desc = socket(AF_INET, SOCK_STREAM, 0)) <= 0){
+    if ((socket_desc = socket(AF_INET, SOCK_STREAM, 0)) < 0){
         perror("socket failed");
         exit(EXIT_FAILURE);
     }
@@ -48,8 +48,5 @@ int main (int argc, const char *argv[]){
     printf("%s", buffer);
 
     close(socket_desc);
-    return 0;
-
-
     return 0;
 }
